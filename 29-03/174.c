@@ -15,7 +15,7 @@ int mdc(int a,int b){
 int mdcmult(int n){
     int num[n],i;
     for(i=0;i<n;i++){
-        printf("Digite o %i numero",i+1);
+        printf("Digite o %i numero\n",i+1);
         scanf("%i",&num[i]);
     }
     int x = num[0];
@@ -26,7 +26,7 @@ int mdcmult(int n){
 }
 int main(){
     int n;
-    printf("quantos numeros você vai usar no mdc?");
+    printf("quantos numeros você vai usar no mdc?\n");
     scanf("%i",&n);
     int mdc = mdcmult(n);
     printf("mdc = %i",mdc);
