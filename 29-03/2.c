@@ -3,58 +3,33 @@
 #include <math.h>
 
 
-int mdc(int maior , int num[] , int n){
-    int resto[n],i;
-    for(i=0;i<n-1;i++){
-            resto[i] = num[i]%maior;
+int mdc(int a,int b){
+    int r = a%b;
+    while(r!=0){
+        a = b;
+        b = r;
+        r = a%b;
     }
-
+    return b;
 }
-
-int bigger(int num[],int n){
-    int i,maior;
-    maior = 0;
+int mdcmult(int n){
+    int num[n],i;
     for(i=0;i<n;i++){
-        if ((num[i]>maior)){
-            maior = num[i];
-        }
-    }
- return maior;
-}
-
-int tiraMaior(int num[],int n,int maior){
-    int newNum[n-1];
-    bool achou = false;
-    for(i=0;i<n;i++){
-        if ((maior != num[i])&&(achou == false)){
-            newNum[i] = num[i];
-            achou = false;
-        }else{
-            newNum[i-1] = num[i];
-            achou = true;
-        }
-    }
-    return newNum;
-}
-
-int dist(int n){
-    int i,num[n];
-    for(i=0;i<n;i++){
-        printf("Digite o %iº numero",i+1);
+        printf("Digite o %i numero",i+1);
         scanf("%i",&num[i]);
     }
- return num;
+    int x = num[0];
+    for(i=1;i<n;i++){
+        x = mdc(x,num[i]);
+    }
+    return x;
 }
-
-int main(void){
+int main(){
     int n;
     printf("quantos numeros você vai usar no mdc?");
     scanf("%i",&n);
-    int num = dist(n);
-    int maior = bigger(num,n);
-    int newNum = tiraMaior(num,n,maior);
-    int mdc = mdc(maior,newNum,n);
-    printf("maior = %d",maior);
+    int mdc = mdcmult(n);
+    printf("mdc = %i",mdc);
 return 0;
 
 }
