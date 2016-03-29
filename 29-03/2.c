@@ -3,69 +3,36 @@
 #include <math.h>
 
 
-int mdc(int a, int b){
-
-
-    
- int n;
- scanf("%i",&n);
-int num[n];
-int r,i,j,maior;
-for(i=0;i<n;i++){
-	for (j=0;j<n;j++){
-		
-		if ((num[j]>num[i])){
-			
-		maior=num[j];
-		
-		}else{
-			maior = num[i];
-		}
-	}
+int mdc(int maior , int num[] ){
+    
 }
 
-for(i=0;i<n;i++){
-	for (j=0;j<n;j++){
-		a
-		
-	}
+int bigger(int num[],int n){
+    int i,maior;
+    maior = 0;
+    for(i=0;i<n;i++){
+        if ((num[i]>maior)){
+            maior = num[i];
+        }
+    }
+ return maior;
 }
-
+int dist(int n){
+    int i,num[n];
+    for(i=0;i<n;i++){
+        printf("Digite o %i numero",i+1);
+        scanf("%i",&num[i]);
+    }
+ return num;
 }
-
 
 int main(void){
-
-    int n;
-
-    printf("Digite quantas vezes deseja fazer a operação:");
-
-    scanf("%d",&n);
-
-    while(n<=0){
-
-        printf("Digite um numero acima de \n");
-
-     }
-
-    while(n>0){
-
-        int x,y;
-
-        printf("Digite o primeiro numero:");
-
-        scanf("%d",&x);
-
-        printf("Digite o segundo numero:");
-
-        scanf("%d",&y);
-
-        printf("Produto dos numeros %i e %i(segundo a questao): %i\n",x,y,mult(x, y));
-
-        n--;
-
-    }
-
+    int n;
+    printf("quantos numeros voce vai usar no mdc?");
+    scanf("%i",&n);
+    int num = dist(n);
+    int maior = bigger(num,n);
+    printf("maior = %d",maior);
 return 0;
 
 }
