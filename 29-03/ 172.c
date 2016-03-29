@@ -17,7 +17,7 @@ int mult(int a, int b){
 
 int main(void){
     int n;
-    printf("Digite quantas vezes deseja fazer a operação:");
+    printf("Digite quantas vezes deseja fazer a operaÃ§Ã£o:");
     scanf("%d",&n);
     while(n<=0){
         printf("Digite um numero acima de \n");
