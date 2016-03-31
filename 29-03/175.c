@@ -13,19 +13,19 @@ int soma_primo(int primos[],int isP[],int n){
 }
 int verifica_primo(int n,int p[]){
     int isPrimo[n];
-    int i;
+    int i,j;
     for(i=0;i<n;i++){
         isPrimo[i] = 1;
     }
     for(i=0;i<n;i++){
-    double num = sqrt(p[i]);
-    int x  = ceil(num);
-    for(i=2;i<=x;i++){
-        if(p[i]%i == 0){
-            isPrimo[i] = 0;
+        double num = sqrt(p[i]);
+        int x  = ceil(num);
+        for(j=2;j<=x;j++){
+            if(p[i]%j == 0){
+                isPrimo[i] = 0;
+            }
         }
     }
-}
     return isPrimo;
 }
 
@@ -40,11 +40,12 @@ int preenche(int n){
 
 
 int main(){
-int n;
-    printf("Quantos numeros deseja verificar?");
-    scanf("%i",&n);
-int p = preenche(n);
-int isP = verifica_primo(n,p);
-int s = soma_primo(p,isP,n);
-    printf("soma = %i",s);
+    int n;
+        printf("Quantos numeros deseja verificar?");
+        scanf("%i",&n);
+    int p = preenche(n);
+    int isP = verifica_primo(n,p);
+    int s = soma_primo(p,isP,n);
+        printf("soma = %i",s);+--
+    return 0;
 }
