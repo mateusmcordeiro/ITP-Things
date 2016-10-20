@@ -1,22 +1,22 @@
 #include <stdio.h>
 #include <string.h>
 #define MAX 100
-int main(){
-char *frase = "Maria é linda, linda linda.";
-char *subfrase = "linda";
+int main() {
+    char *frase = "Maria Ã© linda, linda linda.";
+    char *subfrase = "linda";
 
-int subfrase_len = strlen(subfrase);
-int count = 0;
+    int subfrase_len = strlen(subfrase);
+    int count = 0;
 
-char *onde = frase;
+    char *onde = frase;
 
-if(subfrase_len){
-    while ((onde = strstr(onde, subfrase))) {
-        onde += subfrase_len;
-        count++;
+    if(subfrase_len) {
+        while ((onde = strstr(onde, subfrase))) {
+            onde += subfrase_len;
+            count++;
+        }
     }
-}
 
-printf("%i",count);
-return 0;
+    printf("%i",count);
+    return 0;
 }
