@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 
-int mult(int a, int b){
+int mult(int a, int b) {
 
     int vezes = 0;
 
-    while(a > 1){
+    while(a > 1) {
         a = a/2;
         vezes++;
     }
@@ -15,14 +15,14 @@ int mult(int a, int b){
     return (b + b*(elevado));
 }
 
-int main(void){
+int main(void) {
     int n;
     printf("Digite quantas vezes deseja fazer a operação:");
     scanf("%d",&n);
-    while(n<=0){
+    while(n<=0) {
         printf("Digite um numero acima de \n");
-     }
-    while(n>0){
+    }
+    while(n>0) {
         int x,y;
         printf("Digite o primeiro numero:");
         scanf("%d",&x);
@@ -31,5 +31,5 @@ int main(void){
         printf("Produto dos numeros %i e %i(segundo a questao): %i\n",x,y,mult(x, y));
         n--;
     }
-return 0;
+    return 0;
 }
